@@ -22,6 +22,9 @@ Below are the five plots.
 
 5. This stage included visualization of loan application data, such as approval rates by gender and income ranges or by property area. Similarly to the stage 3, it was implemented using Python pandas and matplotlib libraries. One of the challenges was to  create a multi-bar plot to illustrate approval rate for two gender and three income ranges.
 
+![Requirement 5.1 Plot](/Plots/req5_1.PNG "Req 5.1 Plot" )
+![Requirement 5.2 Plot](/Plots/req5_2.PNG "Req 5.2 Plot" )
+
 To make the project accessible to the public, a github repository was created. The repository includes all the code, original data that was extracted, as well as screenshots of the plots.
 
 
