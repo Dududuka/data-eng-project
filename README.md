@@ -1,6 +1,8 @@
 # ETL project
 
-The project 
+## The project involved extracting the available banking data, transforming the data and loading it to the database. After that a front-end console application was created for users to view or update the data, and several plots were created to highlight existing trends.
+
+The project consists of the following stages:
 
 1. Load data to the Credit Card System database. The data include details of customers, bank branches and credit card transactions. Data was extracted from JSON files, transformed according to the specifications and loaded to the MariaDB dababase. 
 The tools used were Jupyter Notebook with Python 3, PySpark and SQL(MariaDB). One of the challenges was to make sure to set relations between the tables, for the database to be usable, which was not mentioned in the requirements.
