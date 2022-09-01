@@ -14,7 +14,7 @@ Below are the five plots.
 
 ![Requirement 3.1 Plot](/Plots/req3_1.PNG "Req 3.1 Plot" )
 ![Requirement 3.2 Plot](/Plots/req3_2.PNG "Req 3.2 Plot" )
-![Requirement 3.3 Plot](/Plots/req3_3.PNG "Req 3.3 Plot" )
+![Requirement 3.3 Plot](/Plots/req3_3_.PNG "Req 3.3 Plot" )
 ![Requirement 3.4 Plot](/Plots/req3_4.PNG "Req 3.4 Plot" )
 ![Requirement 3.5 Plot](/Plots/req3_5.PNG "Req 3.5 Plot" )
 
