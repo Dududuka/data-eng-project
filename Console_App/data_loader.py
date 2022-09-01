@@ -17,4 +17,4 @@ def load_table(connection, table_name):
         if connection.is_connected():
             cursor.close()
         connection.close()
-        print("Database connection is closed")
+
