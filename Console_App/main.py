@@ -2,6 +2,11 @@ import mysql.connector
 from mysql.connector import Error
 import data_loader as dl
 
+with open(r"C:\Users\izumr\Desktop\Work\data-eng-project\Console_App\hidden.txt", 'r') as f:
+    hidden_ls = f.readlines()
+    usr = hidden_ls[0][:-1]
+    pwd = hidden_ls[1]
+    f.close()
 
 def transactions_by_zip(zip_value, year_value, month_value):
     from mysql.connector import Error
@@ -9,8 +14,8 @@ def transactions_by_zip(zip_value, year_value, month_value):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             db_Info = connection.get_server_info()
             cursor = connection.cursor()
@@ -42,8 +47,8 @@ def transactions_by_type(type_value):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             db_Info = connection.get_server_info()
             cursor = connection.cursor()
@@ -71,8 +76,8 @@ def transactions_by_state(state_value):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             cursor = connection.cursor()
             SQLQuery = '''select b.BRANCH_CODE, count(cc.TRANSACTION_ID) as NUMBER_OF_TRANSACTIONS, 
@@ -100,8 +105,8 @@ def view_customer_details(ssn_value):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             cursor = connection.cursor()
             SQLQuery = '''select * from cdw_sapp_customer where SSN = '{}';'''
@@ -123,8 +128,8 @@ def modify_customer_details(ssn_value, field_name, field_value):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             cursor = connection.cursor()
             SQLQuery = '''update cdw_sapp_customer  set {} = '{}'
@@ -147,8 +152,8 @@ def generate_monthly_bill(cc_number, year_value, month_value):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             cursor = connection.cursor()
             SQLQuery = '''select CREDIT_CARD_NO, sum(TRANSACTION_VALUE) as MONTHLY_BILL
@@ -172,8 +177,8 @@ def transactions_between_dates(ssn_value, start_date, end_date):
     try:
         connection = mysql.connector.connect(host='localhost',
                                              database='creditcard_capstone',
-                                             user='root',
-                                             password='a')
+                                             user=usr,
+                                             password=pwd)
         if connection.is_connected():
             cursor = connection.cursor()
             SQLQuery = '''select * from cdw_sapp_credit_card
@@ -229,8 +234,8 @@ if __name__ == '__main__':
 
     connection = mysql.connector.connect(host='localhost',
                                          database='creditcard_capstone',
-                                         user='root',
-                                         password='a')
+                                         user=usr,
+                                         password=pwd)
 
     dl.load_table(connection, 'cdw_sapp_credit_card')
 
